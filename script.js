@@ -20,7 +20,7 @@ fetch(hostUrl + twoPointsURL, {
 
 var map;
 var service;
-var infowindow;
+var infoWindow;
 var route;
 var directionsService;
 var directionsRenderer;
