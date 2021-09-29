@@ -24,7 +24,7 @@ var infoWindow;
 var route;
 var directionsService;
 var directionsRenderer;
-
+//this draws the map with the user input locations
 function initMap() {
     directionsService = new google.maps.DirectionsService();
     directionsRenderer = new google.maps.DirectionsRenderer();
