@@ -62,7 +62,53 @@ function initMap() {
     });
   }
 
+  var c = moment().format();
+  var geoArray = [-22, 14];  //use geoArray.push() to add to lat and long to this
+  var movieCoord = geoArray.toString().replace(',',';');
+  var cinArray = [];
+  
+console.log(movieCoord);
+ var settings = {
+    "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=3",
+    "method": "GET",
+    "timeout": 0,
+    "headers": {
+    "api-version": "v200",
+    "Authorization": "Basic Q09ESV85X1hYOnYwWVJHZzRtMVdZMw==",  //change when official
+    "client": "CODI_9",
+    "x-api-key": "mF0IdpuMdd7g01GUbV0ozdb9cK5wJmmRZCT7Wph0",  //change when official
+    "device-datetime": c,   //use moment.js
+    "territory": "XX",      //should be US when official
+    "geolocation": movieCoord
+    },
+    };
+    
+    $.ajax(settings).done(function (response) {
+    console.log(response);
+    for (i=0; i < 3; i++) {
+    var hereBe = $('.dragoon');  // placeholder; MUST CHANGE TO SEE INFO ON PAGE!
+    var cinemaId = document.createElement('p');
+    cinemaId.textContent = response.cinemas[i].cinema_id;
+    var cinAID = response.cinemas[i].cinema_id;
 
+    var cinemaName = document.createElement("p");
+    cinemaName.textContent = response.cinemas[i].cinema_name;
+
+    var cinemaAddress = document.createElement("p");
+    cinemaAddress.textContent = response.cinemas[i].address;
+
+    var cinLat = document.createElement("p");
+    cinLat.textContent = "Latitude: "  + response.cinemas[i].lat;
+    var cinLong = document.createElement("p");
+    cinLong.textContent = "Longitude: " + response.cinemas[i].lng;
+
+     hereBe.append(cinemaId, cinemaName, cinemaAddress, cinLat, cinLong);
+     
+     cinArray.push(cinAID);
+     
+    }
+    //    acquireShowTimes();   needs fixin'
+    });
 
 
 
