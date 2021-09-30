@@ -1,5 +1,6 @@
 #map {
-    height: 1000px;
+
+    height: 500px;
     width: 100%;
   }
 body,h1,h2,h3,h4,h5 {
@@ -7,8 +8,25 @@ body,h1,h2,h3,h4,h5 {
 };
 .w3-quarter img{
     margin-bottom: -6px; 
-    cursor: pointer
+    cursor: pointer;
 };
 .w3-quarter img:hover{
-    opacity: 0.6; transition: 0.3s
+    opacity: 0.6; 
+    transition: 0.3s;
 };
+
+.mapdiv{
+    height:500px;
+
+}
+#resultContent{
+
+}
+.theForm{
+    max-width: 80%; 
+    margin: 10px auto;
+}
+
+#submitContent{
+    height: 500px;
+}
