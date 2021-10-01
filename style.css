@@ -1,3 +1,11 @@
+html{
+    min-height:100%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+body{
+    height:100%; /* force the BODY element to match the height of the HTML element */
+}
+
 #map {
     height: 500px;
     width: 100%;
@@ -19,6 +27,10 @@ body,h1,h2,h3,h4,h5 {
 
 }
 #resultContent{
+    max-width: 80%; 
+    margin: 10px auto;
+    padding: 20px;
+   
 
 }
 .theForm{
@@ -27,5 +39,37 @@ body,h1,h2,h3,h4,h5 {
 }
 
 #submitContent{
-    height: 500px;
+    height: 100%;
+    flex-grow: 1;
+    
+}
+
+.head{
+    font-family: "Allerta Stencil", Sans-serif;
+}
+
+#header{
+    background-image: url("https://files.slack.com/files-pri/T02CCPC1GHG-F02G5U8CKM3/photo-welcome.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.right-content{
+    padding:10px;
+    margin:10px;
+    border-radius: 25px;
+
+}
+
+.right-content:hover{
+    size:110%;
+    /* background-color:blue; */
+    opacity: 0.50;
+    box-shadow: 20px;
+    /* width: 95%;
+    height: 95%; */
+    transform: scale(1.05);
+}
+.w3-main{
+    height: 100%;
 }

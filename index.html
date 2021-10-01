@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <link rel="stylesheet" href="style.css">
 
 
 
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16 w3-center">
-  <span>Halfway There!</span>
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16 w3-center" id= "header">
+  <span class = "head">Halfway There!</span>
 </header>
 
 
@@ -21,25 +23,27 @@
 <div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
   
   <!-- Submitting content to render -->
-  <div class="w3-left w3-col m3 w3-border" id= submitContent>
+  <div class="w3-left w3-col m3 w3-border w3-card" id= submitContent>
     <form>
       <div class= "theForm" >
         <label>First Location</label>
         <input class = "w3-input w3-border" type="text">
       </div>
+      <br>
       <div class = "theForm">
         <label>Second Location</label>
         <input class = "w3-input w3-border" type="text">
       </div>
+      <br>
       <div class = "theForm">
-        <form action="/action_page.php">
-          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-          <label for="vehicle1"> Restaurants/Bars</label><br>
-          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-          <label for="vehicle2"> Parks</label><br>
-          <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-          <label for="vehicle3"> Movies</label><br><br>
-          <input type="submit" value="Submit">
+        <form action="">
+          <input type="checkbox" id="vehicle1" name="option1" value="Eatery">
+          <label for="option1"> Restaurants/Bars</label><br><br>
+          <input type="checkbox" id="vehicle2" name="option2" value="Outdoors">
+          <label for="option2"> Parks</label><br><br>
+          <input type="checkbox" id="vehicle3" name="option3" value="Cinema">
+          <label for="option 3"> Movies</label><br><br><br>
+          <input type="submit" value="Submit"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </form>
         
       </div>
@@ -59,8 +63,28 @@
   
 
   <!--Displaying result options-->
-    <div class="w3-col m3 w3-right w3-padding-24" id= "resultContent">
+    <div class="w3-col m3 w3-right w3-center w3-padding-24" id= "resultContent">
       <h3>Your content will be displayed here</h3>
+      <div class = "w3-border w3-card right-content">
+      <h4 class= " col-1">This is content</h4>
+      </p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+    </div>
+    <div class = "w3-border w3-card right-content">
+      <h4 class= " col-1">This is content</h4>
+        <p>content to be displayed</p>
+        <p>content to be displayed</p>
+        <p>content to be displayed</p>
+    </div>
+    <div class = "w3-border w3-card right-content"> 
+      <h4 class= " col-1">This is content</h4>
+        <p>content to be displayed</p>
+        <p>content to be displayed</p>
+        <p>content to be displayed</p>
+    </div>
+
     </div>
   </div>
 
@@ -69,7 +93,7 @@
 
   <!-- Footer -->
   <footer class="w3-container w3-grey w3-center">  
-    <p>please display center</p>
+    <p> Application developed by: DeShayna D., Josh W., & Donovan K. </p>
 
       
   </footer>
