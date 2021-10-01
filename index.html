@@ -12,6 +12,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 
 
 
+
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-white w3-xlarge w3-padding-16 w3-center" id= "header">
   <span class = "head">Halfway There!</span>
@@ -54,9 +55,9 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   <!--Map to display location-->
    <div class="w3-col m6 w3-center" id = "mapContent" >
       <div id = "map" class = "w3-center ">
-        <script async
+        <!-- <script async
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I&libraries=geometry,places,localContext,drawing,visualization&callback=initMap">
-        </script>
+        </script> -->
         </div>
     </div>
 
@@ -65,6 +66,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   <!--Displaying result options-->
     <div class="w3-col m3 w3-right w3-center w3-padding-24" id= "resultContent">
       <h3>Your content will be displayed here</h3>
+
       <div class = "w3-border w3-card right-content">
       <h4 class= " col-1">This is content</h4>
       </p>
@@ -107,7 +109,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <option value="los angeles, ca">Los Angeles</option>
   </select>
   <strong>End: </strong>
-  <select id="end" onchange="calcRoute();">
+  <select id="end" onchange='calcRoute();'>
     <option value="chicago, il">Chicago</option>
     <option value="st louis, mo">St Louis</option>
     <option value="joplin, mo">Joplin, MO</option>
@@ -150,6 +152,7 @@ integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 crossorigin="anonymous"
 ></script>
 <script src = "script.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I&callback=initMap" async defer></script> -->
 
 
 

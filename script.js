@@ -7,17 +7,7 @@ var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
 
 console.log(twoPointsURL);
 
-fetch(hostUrl + twoPointsURL, {
-    method: 'GET',
-    credentials: 'same-origin'
-})
-    .then(function(response){
-        return response.json;
-    })
-    .then(function(data){ 
-        console.log(data)
-    })
-
+var marker;
 var map;
 var service;
 var infoWindow;
@@ -33,7 +23,7 @@ function initMap() {
       zoom:8,
       center: atlanta
     }
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
     directionsRenderer.setMap(map);
   }
   
@@ -45,27 +35,67 @@ function initMap() {
       destination: end,
       travelMode: 'DRIVING'
     };
+
+    //This is the route function
     directionsService.route(request, function(result, status) {
       if (status == 'OK') {
         directionsRenderer.setDirections(result);
         var numberofWaypoints = result.routes[0].overview_path.length;             
         var midPoint=result.routes[0].overview_path[parseInt( numberofWaypoints / 2)];
+        let midLat = midPoint.lat();
+        let midLng = midPoint.lng();
         console.log(midPoint)
         console.log(midPoint.lat())
         console.log(midPoint.lng())
-        var marker = new google.maps.Marker({
+        marker = new google.maps.Marker({
             map: map,
             position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
-            title:'Mid Point'
+            title:'Mid Point',
+            zIndex: 1
         });
+        marker.setMap(map)
+        //calcMidPoint(midLat, midLng)
+        var config = {
+          method: 'get',
+          url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&radius=50000&type=restaurant&keyword=beer&key=' + apiKey,
+          header: { }
+        }
+        
+
+        fetch(config.url)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          console.log(data);
+          console.log(data.results);
+          console.log(data.results[0]);
+          console.log(data.results[0].geometry.location.lng);
+          console.log(data.results[0].geometry.location.lat);
+          for (var i=0;i<data.results.length; i++) {
+          // var lat = data.results[i].geometry.location.lat;
+          // var lng = data.results[i].geometry.location.lng;
+          var latlng = data.results[i].geometry.location;
+          marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: data.results[i].name
+          });
+          debugger;
+          marker.setMap(map);
+        }
+
+        })
       }
     });
   }
+  
 
   var c = moment().format();
   var geoArray = [-22, 14];  //use geoArray.push() to add to lat and long to this
   var movieCoord = geoArray.toString().replace(',',';');
   var cinArray = [];
+  var moviesAndTimes = [];    //for films & showtimes at the the 3 cinemas
   
 console.log(movieCoord);
  var settings = {
@@ -107,8 +137,60 @@ console.log(movieCoord);
      cinArray.push(cinAID);
      
     }
-    //    acquireShowTimes();   needs fixin'
+    acquireShowTimes();   
     });
+
+    function acquireShowTimes() {
+    
+    
+      var needDate = moment().format("YYYY-MM-DD");
+      for (let i = 0; i < cinArray.length; i++) {
+        var settings = {
+          url:
+            "https://api-gate2.movieglu.com/cinemaShowTimes/?&cinema_id=" +
+            cinArray[i] +
+            "&date=" +
+            needDate +
+            "&sort=popularity",
+          method: "GET",
+          timeout: 0,
+          headers: {
+            "api-version": "v200",
+            Authorization: "Basic Q09ESV85X1hYOnYwWVJHZzRtMVdZMw==", //change when official
+            client: "CODI_9",
+            "x-api-key": "mF0IdpuMdd7g01GUbV0ozdb9cK5wJmmRZCT7Wph0", //change when official
+            "device-datetime": c, //use moment.js
+            territory: "XX", //should be US when official
+            geolocation: movieCoord,
+          },
+        };
+      
+        $.ajax(settings).done(function (response) {
+          var hereBe = $(".dragoon");
+           console.log(response);
+          var nameLength = response.films.length;
+          moviesAndTimes.push('CINEMA');
+      
+          for (let j = 0; j < nameLength; j++) {
+              var sTime = [];
+             moviesAndTimes.push(response.films[j].film_name);
+      
+            for (
+              let b = 0;
+              b < response.films[j].showings.Standard.times.length;
+              b++
+            ) {
+                
+              sTime.push(response.films[j].showings.Standard.times[b].start_time);
+            }
+            moviesAndTimes.push(sTime);
+          }
+          console.log(moviesAndTimes);
+          console.log(nameLength);
+        });
+      }
+      
+      }
 
 
 
