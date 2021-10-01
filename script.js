@@ -7,17 +7,7 @@ var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
 
 console.log(twoPointsURL);
 
-fetch(hostUrl + twoPointsURL, {
-    method: 'GET',
-    credentials: 'same-origin'
-})
-    .then(function(response){
-        return response.json;
-    })
-    .then(function(data){ 
-        console.log(data)
-    })
-
+var marker;
 var map;
 var service;
 var infoWindow;
@@ -33,7 +23,7 @@ function initMap() {
       zoom:8,
       center: atlanta
     }
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
     directionsRenderer.setMap(map);
   }
   
@@ -45,68 +35,62 @@ function initMap() {
       destination: end,
       travelMode: 'DRIVING'
     };
+
+    //This is the route function
     directionsService.route(request, function(result, status) {
       if (status == 'OK') {
         directionsRenderer.setDirections(result);
         var numberofWaypoints = result.routes[0].overview_path.length;             
         var midPoint=result.routes[0].overview_path[parseInt( numberofWaypoints / 2)];
+        let midLat = midPoint.lat();
+        let midLng = midPoint.lng();
         console.log(midPoint)
         console.log(midPoint.lat())
         console.log(midPoint.lng())
-        var marker = new google.maps.Marker({
+        marker = new google.maps.Marker({
             map: map,
             position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
-            title:'Mid Point'
+            title:'Mid Point',
+            zIndex: 1
         });
+        marker.setMap(map)
+        //calcMidPoint(midLat, midLng)
+        var config = {
+          method: 'get',
+          url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&radius=50000&type=restaurant&keyword=beer&key=' + apiKey,
+          header: { }
+        }
+        
+
+        fetch(config.url)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          console.log(data);
+          console.log(data.results);
+          console.log(data.results[0]);
+          console.log(data.results[0].geometry.location.lng);
+          console.log(data.results[0].geometry.location.lat);
+          for (var i=0;i<data.results.length; i++) {
+          // var lat = data.results[i].geometry.location.lat;
+          // var lng = data.results[i].geometry.location.lng;
+          var latlng = data.results[i].geometry.location;
+          marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: data.results[i].name
+          });
+          debugger;
+          marker.setMap(map);
+        }
+
+        })
       }
     });
   }
+  
 
-
-
-
-
-//   var directionsDisplay;
-//         var directionsService = new google.maps.DirectionsService();
-//         var map;
-
-//         function initialize() {
-//             directionsDisplay = new google.maps.DirectionsRenderer();
-//             var chicago = new google.maps.LatLng(41.850033, -87.6500523);
-//             var mapOptions = {
-//                 zoom: 7,
-//                 center: chicago
-//             };
-//             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-//             directionsDisplay.setMap(map);
-//         }
-
-        // function calcRoute() {
-        //     var start = document.getElementById('start').value;
-        //     var end = document.getElementById('end').value;
-        //     var request = {
-        //         origin: start,
-        //         destination: end,
-        //         travelMode: google.maps.TravelMode.DRIVING
-        //     };
-        //     directionsService.route(request, function (response, status) {
-        //         if (status == google.maps.DirectionsStatus.OK) {
-        //             directionsDisplay.setDirections(response);
-        //             var numberofWaypoints = response.routes[0].overview_path.length;
-                    
-        //             var midPoint=response.routes[0].overview_path[parseInt( numberofWaypoints / 2)];
-        //             var marker = new google.maps.Marker({
-        //                 map: map,
-        //                 position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
-        //               title:'Mid Point'
-        //             });
-                    
-                    
-        //         }
-        //     });
-        // }
-
-        // google.maps.event.addDomListener(window, 'load', initialize);
 
 // Script to open and close sidebar
 function w3_open() {
