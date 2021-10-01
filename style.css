@@ -1,3 +1,5 @@
+
+
 html{
     min-height:100%;/* make sure it is at least as tall as the viewport */
     position:relative;
@@ -45,9 +47,6 @@ body,h1,h2,h3,h4,h5 {
     
 }
 
-.head{
-    font-family: "Allerta Stencil", Sans-serif;
-}
 
 #header{
     background-image: url("https://files.slack.com/files-pri/T02CCPC1GHG-F02G5U8CKM3/photo-welcome.jpg");
@@ -73,4 +72,65 @@ body,h1,h2,h3,h4,h5 {
 }
 .w3-main{
     height: 100%;
+}
+
+
+span {
+    position: relative;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 900;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+span:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: attr(filter-content);
+  
+    filter: url(#motion-blur-filter);
+  }
+  
+  svg {
+    display: none;
+  }
+
+  .formLocatInput{
+	position:relative;
+	margin-bottom:25px;
+    max-width: 80%; 
+    margin: 10px auto;
+}
+
+.formLocatInput label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:black;	
+	transition: all 0.5s ease-in-out;
+}
+.formLocatInput input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:black;
+}
+.formLocatInput input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+
+.formLocatInput input:focus ~ label{
+	top:-12px;
+	font-size:12px;
+	
 }
