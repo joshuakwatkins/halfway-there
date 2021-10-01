@@ -66,6 +66,7 @@ function initMap() {
   var geoArray = [-22, 14];  //use geoArray.push() to add to lat and long to this
   var movieCoord = geoArray.toString().replace(',',';');
   var cinArray = [];
+  var moviesAndTimes = [];    //for films & showtimes at the the 3 cinemas
   
 console.log(movieCoord);
  var settings = {
@@ -107,8 +108,60 @@ console.log(movieCoord);
      cinArray.push(cinAID);
      
     }
-    //    acquireShowTimes();   needs fixin'
+    acquireShowTimes();   
     });
+
+    function acquireShowTimes() {
+    
+    
+      var needDate = moment().format("YYYY-MM-DD");
+      for (let i = 0; i < cinArray.length; i++) {
+        var settings = {
+          url:
+            "https://api-gate2.movieglu.com/cinemaShowTimes/?&cinema_id=" +
+            cinArray[i] +
+            "&date=" +
+            needDate +
+            "&sort=popularity",
+          method: "GET",
+          timeout: 0,
+          headers: {
+            "api-version": "v200",
+            Authorization: "Basic Q09ESV85X1hYOnYwWVJHZzRtMVdZMw==", //change when official
+            client: "CODI_9",
+            "x-api-key": "mF0IdpuMdd7g01GUbV0ozdb9cK5wJmmRZCT7Wph0", //change when official
+            "device-datetime": c, //use moment.js
+            territory: "XX", //should be US when official
+            geolocation: movieCoord,
+          },
+        };
+      
+        $.ajax(settings).done(function (response) {
+          var hereBe = $(".dragoon");
+           console.log(response);
+          var nameLength = response.films.length;
+          moviesAndTimes.push('CINEMA');
+      
+          for (let j = 0; j < nameLength; j++) {
+              var sTime = [];
+             moviesAndTimes.push(response.films[j].film_name);
+      
+            for (
+              let b = 0;
+              b < response.films[j].showings.Standard.times.length;
+              b++
+            ) {
+                
+              sTime.push(response.films[j].showings.Standard.times[b].start_time);
+            }
+            moviesAndTimes.push(sTime);
+          }
+          console.log(moviesAndTimes);
+          console.log(nameLength);
+        });
+      }
+      
+      }
 
 
 
