@@ -49,7 +49,8 @@ body,h1,h2,h3,h4,h5 {
     height: 700px;
     flex-grow: 1;
     box-shadow: 0 0 5px 5px yellow;
-    color:white;
+    color: black;
+    background-color: white;;
     
 }
 
@@ -146,6 +147,7 @@ span:before {
 }
 
 .radioList {
+<<<<<<< HEAD
      padding: 10px 40px;
     margin: 0 auto; 
 }
@@ -169,3 +171,13 @@ span:before {
 	background-color: darkgray;
 	border-radius: 10px;
 }
+=======
+    padding: 10px 40px;
+    margin: 0 auto;
+
+}
+
+#findthemiddle {
+    margin: 25px;
+}
+>>>>>>> 7f0248b6ac88aced8c2a898e9a8d4d5e38fd0e5e
