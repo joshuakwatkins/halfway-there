@@ -27,24 +27,26 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   <div class="w3-left w3-col m3 w3-border w3-card" id= submitContent>
     <form>
       <div class= "theForm" >
-        <label>First Location</label>
-        <input class = "w3-input w3-border" type="text">
-      </div>
+        <label>First Address</label>
+        <input class = "w3-input w3-border" type="text" id="addy1" placeholder="The White House">
       <br>
-      <div class = "theForm">
-        <label>Second Location</label>
-        <input class = "w3-input w3-border" type="text">
-      </div>
       <br>
-      <div class = "theForm">
-        <form action="">
-          <input type="checkbox" id="vehicle1" name="option1" value="Eatery">
-          <label for="option1"> Restaurants/Bars</label><br><br>
-          <input type="checkbox" id="vehicle2" name="option2" value="Outdoors">
-          <label for="option2"> Parks</label><br><br>
-          <input type="checkbox" id="vehicle3" name="option3" value="Cinema">
-          <label for="option 3"> Movies</label><br><br><br>
-          <input type="submit" value="Submit"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br>
+        <label>Second Address</label>
+        <input class = "w3-input w3-border" type="text" id="addy2" placeholder="The Empire State Building">
+     <br>
+     <br>
+     <br>
+        <form>
+          <input type="radio" id="vehicle1" name="userType" value="restaurant">
+          <label for="option2">Food</label><br><br>
+          <input type="radio" id="vehicle2" name="userType" value="bar">
+          <label for="option1">Drink</label><br><br>
+          <input type="radio" id="vehicle3" name="userType" value="movie_theater">
+          <label for="option 3">Movies</label><br><br>
+          <input type="radio" id="vehicle4" name="userType" value="park">
+          <label for="option 3">Parks</label><br><br>
+          <button onclick="isitworking();">Find The Middle!</button>
         </form>
         
       </div>
@@ -92,7 +94,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
   </div>
 
  <div id="map"></div>
- <div>
+ <!-- <div>
   <strong>Start: </strong>
   <select id="start" onchange="calcRoute();">
     <option value="chicago, il">Chicago</option>
@@ -107,6 +109,7 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <option value="barstow, ca">Barstow</option>
     <option value="san bernardino, ca">San Bernardino</option>
     <option value="los angeles, ca">Los Angeles</option>
+    <option value="marietta, ga">Marietta</option>
   </select>
   <strong>End: </strong>
   <select id="end" onchange='calcRoute();'>
@@ -122,8 +125,10 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
     <option value="barstow, ca">Barstow</option>
     <option value="san bernardino, ca">San Bernardino</option>
     <option value="los angeles, ca">Los Angeles</option>
+    <option value="norcross, ga">Norcross</option>
+    <option value="lawrenceville, ga">Lawrenceville</option>
   </select>
-  </div>
+  </div> -->
 
 
   <!-- Footer -->
@@ -141,7 +146,6 @@ href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I&libraries=geometry,places,localContext,drawing,visualization&callback=initMap">
 </script>
-<script src="./Assets/JS/epolys.js"></script>
 <script
 type="text/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
