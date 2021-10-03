@@ -113,7 +113,7 @@ function calcRoute() {
             marker.setMap(map);
             var placeCard = $('<div>').attr({
               class: "w3-border w3-card right-content",
-              style: "position: relative"
+              style: "position: relative; background-color: white;"
             });
             var placeTitle = $('<h4>').attr({
               class: "col-1"

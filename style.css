@@ -31,7 +31,7 @@ body,h1,h2,h3,h4,h5 {
 }
 #resultContent{
     max-width: 80%; 
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 20px;
     height: 700px;
     overflow-y: auto;
@@ -105,12 +105,12 @@ span:before {
 	position:relative;
 	margin-bottom:25px;
     max-width: 80%; 
-    margin: 10px auto;
+    margin: 50px auto;
 }
 
 .formLocatInput label{
 	position:absolute;
-	top:0px;
+	top:-20px;
 	left:0px;
 	font-size:16px;
 	color:black;	
@@ -135,4 +135,10 @@ span:before {
 	top:-12px;
 	font-size:12px;
 	
+}
+
+.radioList {
+    padding: 10px 40px;
+    margin: 0 auto;
+
 }
