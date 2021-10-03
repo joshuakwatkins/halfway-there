@@ -10,7 +10,7 @@ body{
 
 #map {
 
-    height: 500px;
+    height: 700px;
     width: 100%;
   }
 body,h1,h2,h3,h4,h5 {
@@ -33,6 +33,8 @@ body,h1,h2,h3,h4,h5 {
     max-width: 80%; 
     margin: 10px auto;
     padding: 20px;
+    height: 700px;
+    overflow-y: auto;
    
 
 }
@@ -42,14 +44,14 @@ body,h1,h2,h3,h4,h5 {
 }
 
 #submitContent{
-    height: 100%;
+    height: 700px;
     flex-grow: 1;
     
 }
 
 
 #header{
-    background-image: url("https://files.slack.com/files-pri/T02CCPC1GHG-F02G5U8CKM3/photo-welcome.jpg");
+    background-image: url("./Assets/IMG/photo-welcome.jpg");
     background-repeat: no-repeat;
     background-size:cover;
 }
