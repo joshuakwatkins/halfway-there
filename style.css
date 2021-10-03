@@ -6,6 +6,8 @@ html{
 }
 body{
     height:100%; /* force the BODY element to match the height of the HTML element */
+    background-color:black;
+    
 }
 
 #map {
@@ -44,21 +46,25 @@ body,h1,h2,h3,h4,h5 {
 #submitContent{
     height: 100%;
     flex-grow: 1;
+    box-shadow: 0 0 5px 5px yellow;
+    color:white;
     
 }
 
 
 #header{
-    background-image: url("https://files.slack.com/files-pri/T02CCPC1GHG-F02G5U8CKM3/photo-welcome.jpg");
+    background-image: url("./Assets/photos/photo-welcome.jpg");
     background-repeat: no-repeat;
     background-size:cover;
 }
+
 
 .right-content{
     padding:10px;
     margin:10px;
     border-radius: 25px;
-
+    box-shadow: 0 0 5px 5px yellow;
+    color:white;
 }
 
 .right-content:hover{
@@ -72,6 +78,7 @@ body,h1,h2,h3,h4,h5 {
 }
 .w3-main{
     height: 100%;
+
 }
 
 
@@ -104,6 +111,8 @@ span:before {
 	margin-bottom:25px;
     max-width: 80%; 
     margin: 10px auto;
+    /*background-color:black;*/
+    
 }
 
 .formLocatInput label{
@@ -111,7 +120,7 @@ span:before {
 	top:0px;
 	left:0px;
 	font-size:16px;
-	color:black;	
+	color:white;	
 	transition: all 0.5s ease-in-out;
 }
 .formLocatInput input{ 
@@ -121,12 +130,12 @@ span:before {
   width:100%;
   padding:8px 0 5px 0;
   font-size:16px;
-  color:black;
+  color:white;
 }
 .formLocatInput input:focus{ 
  border:none;	
  outline:none;
- border-bottom:1px solid #e74c3c;	
+ border-bottom:1px solid yellow;	
 }
 
 .formLocatInput input:focus ~ label{
