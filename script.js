@@ -66,8 +66,10 @@ function initMap() {
   var geoArray = [-22, 14];  //use geoArray.push() to add to lat and long to this
   var movieCoord = geoArray.toString().replace(',',';');
   var cinArray = [];
-  var moviesAndTimes = [];    //for films & showtimes at the the 3 cinemas
+  var moviesAndTimes = ['.cinema1','.cinema2','.cinema3'];
+  var joshNeeds = []; //array containing 3 subarrays of lat,long
   
+
 console.log(movieCoord);
  var settings = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=3",
@@ -83,37 +85,37 @@ console.log(movieCoord);
     "geolocation": movieCoord
     },
     };
-    
+
     $.ajax(settings).done(function (response) {
     console.log(response);
     for (i=0; i < 3; i++) {
-    var hereBe = $('.dragoon');  // placeholder; MUST CHANGE TO SEE INFO ON PAGE!
-    var cinemaId = document.createElement('p');
-    cinemaId.textContent = response.cinemas[i].cinema_id;
+      var cinTarget = $(moviesAndTimes[i]);  // placeholder; MUST CHANGE TO SEE INFO ON PAGE!
+
     var cinAID = response.cinemas[i].cinema_id;
 
-    var cinemaName = document.createElement("p");
+    var cinemaName = document.createElement("h3");
     cinemaName.textContent = response.cinemas[i].cinema_name;
 
     var cinemaAddress = document.createElement("p");
-    cinemaAddress.textContent = response.cinemas[i].address;
+    cinemaAddress.textContent ="Address: " + response.cinemas[i].address;
 
-    var cinLat = document.createElement("p");
-    cinLat.textContent = "Latitude: "  + response.cinemas[i].lat;
-    var cinLong = document.createElement("p");
-    cinLong.textContent = "Longitude: " + response.cinemas[i].lng;
+    var cinFilm = document.createElement("h5");
+      cinFilm.textContent ="Popular Movies: ";
 
-     hereBe.append(cinemaId, cinemaName, cinemaAddress, cinLat, cinLong);
-     
+    var navEl = [];
+    navEl.push(response.cinemas[i].lat);
+    navEl.push(response.cinemas[i].lng);
+
+     cinTarget.append(cinemaName, cinemaAddress, cinFilm);
+
      cinArray.push(cinAID);
-     
+     joshNeeds.push(navEl);
     }
-    acquireShowTimes();   
+    acquireShowTimes();
     });
 
     function acquireShowTimes() {
-    
-    
+
       var needDate = moment().format("YYYY-MM-DD");
       for (let i = 0; i < cinArray.length; i++) {
         var settings = {
@@ -135,32 +137,31 @@ console.log(movieCoord);
             geolocation: movieCoord,
           },
         };
-      
+
         $.ajax(settings).done(function (response) {
-          var hereBe = $(".dragoon");
-           console.log(response);
-          var nameLength = response.films.length;
-          moviesAndTimes.push('CINEMA');
-      
-          for (let j = 0; j < nameLength; j++) {
+          var cinTarget = $(moviesAndTimes[i]);
+         
+          for (let j = 0; j < 4; j++) {
               var sTime = [];
-             moviesAndTimes.push(response.films[j].film_name);
-      
+     
+
             for (
               let b = 0;
-              b < response.films[j].showings.Standard.times.length;
+              b < 3;
               b++
             ) {
-                
+
               sTime.push(response.films[j].showings.Standard.times[b].start_time);
             }
-            moviesAndTimes.push(sTime);
+            var cinTime = document.createElement("li");
+            cinTime.textContent = response.films[j].film_name + " -\n Start Times: " + sTime;
+            cinTarget.append(cinTime);
+            
           }
-          console.log(moviesAndTimes);
-          console.log(nameLength);
+
         });
       }
-      
+     
       }
 
 
