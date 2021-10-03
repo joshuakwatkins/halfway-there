@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 <link rel="stylesheet" href="style.css">
-
+<link rel="icon" 
+      type="image/png" 
+    href="./howtoFavicon/favicon-16x16.png">
 
 <body>
 
@@ -18,7 +20,7 @@
       <feGaussianBlur stdDeviation="100 0"></feGaussianBlur>
     </filter>
   </svg>
-  <span filter-content="S">Halfway There!</span>
+  <span filter-content="S">Halfway There!</span><img src="./howtoFavicon/favicon-32x32.png" alt="curvy road">
 </header>
 
 
@@ -49,14 +51,15 @@
    </div>
      <!-- <div class=radioList>
         <form>
-          <input type="radio" id="vehicle1" name="userType" value="restaurant">
-          <label for="option2">Food</label><br><br>
-          <input type="radio" id="vehicle2" name="userType" value="bar">
-          <label for="option1">Drink</label><br><br>
-          <input type="radio" id="vehicle3" name="userType" value="movie_theater">
-          <label for="option 3">Movies</label><br><br>
-          <input type="radio" id="vehicle4" name="userType" value="park">
-          <label for="option 3">Parks</label><br><br>
+          <input type="radio" id="vehicle1" name="switch" value="restaurant">
+          <label for="option2" class = "switchLabel">Food</label><br><br>
+          <input type="radio" id="vehicle2" name="switch" value="bar">
+          <label for="option1" class = "switchLabel">Drink</label><br><br>
+          <input type="radio" id="vehicle3" name="switch" value="movie_theater">
+          <label for="option3" class = "switchLabel" >Movies</label><br><br>
+          <input type="radio" id="vehicle4" name="switch" value="park">
+          <label for="option4"class = "switchLabel" >Parks</label><br><br>
+          <div class= "switchIndicator"></div>
           <button onclick="isitworking();">Find The Middle!</button>
         </form>
         
@@ -81,8 +84,40 @@
 
   <!--Displaying result options-->
   <div class="w3-col m3 w3-right w3-center w3-padding-24" id="resultContent">
+<<<<<<< HEAD
+    <h5 class = "RightText" style="color:white;">Where will you go?</h3>
+    <div class="w3-border w3-card right-content">
+      <h4 class=" col-1">This is content</h4>
+      </p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+    </div>
+    <div class="w3-border w3-card right-content">
+      <h4 class=" col-1">This is content</h4>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+    </div>
+    <div class="w3-border w3-card right-content">
+      <h4 class=" col-1">This is content</h4>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+      <p>content to be displayed</p>
+    </div>
+
+    <!--
+    <div class=dragoon></div> //REMOVE THIS WHEN READY!-->
+  </div>
+</div>
+
+<div id="map"></div>
+<div>
+  <!-- <strong>Start: </strong>
+=======
 
     <h5 class = "RightText" style="color:white;">Where will you go?</h3>
+>>>>>>> 30e5fec976e0d37f0d266041d4e7599392c0b02c
     <h3>Enter two locations to find attractions at the midpoint!</h3>
     <h3>Save on time and gas, everybody wins!</h3>
   
@@ -96,7 +131,11 @@
        
       </div>
 
+<<<<<<< HEAD
+    <div class=dragoon></div> //REMOVE THIS WHEN READY! -->
+=======
     <!-- <div class=dragoon></div> //REMOVE THIS WHEN READY! -->
+>>>>>>> 30e5fec976e0d37f0d266041d4e7599392c0b02c
   </div>
 </div>
 </div>
