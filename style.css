@@ -112,7 +112,7 @@ span:before {
 	position:relative;
 	margin-bottom:25px;
     max-width: 80%; 
-    margin: 10px auto;
+    margin: 50px auto;
     /*background-color:black;*/
 }
 
@@ -148,4 +148,24 @@ span:before {
 .radioList {
      padding: 10px 40px;
     margin: 0 auto; 
+}
+
+::-webkit-scrollbar-track
+{
+	border: 3px black;
+	// border color does not support transparent on scrollbar
+	// border-color: transparent;
+	background-color: yellow;
+}
+
+::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: darkgray;
+	border-radius: 10px;
 }
