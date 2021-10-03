@@ -83,12 +83,18 @@ function calcRoute() {
         //calcMidPoint(midLat, midLng)
         var radius = 5000;
         var userType = $('input[name="userType"]:checked').val();
+        var userKeyword = $('#userKeyword').val();
         console.log(userType);
         var config = {
           method: 'get',
-          url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&opennow=true&radius=' + radius + '&type=' + userType + '&key=' + apiKey,
+          url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&opennow=true&radius=' + radius + '&keyword=' + userKeyword + '&key=' + apiKey,
           header: { }
         }
+        // var config = {
+        //   method: 'get',
+        //   url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&opennow=true&radius=' + radius + '&type=' + userType + '&key=' + apiKey,
+        //   header: { }
+        // }
         
 
         fetch(config.url)
@@ -113,7 +119,7 @@ function calcRoute() {
             marker.setMap(map);
             var placeCard = $('<div>').attr({
               class: "w3-border w3-card right-content",
-              style: "position: relative; background-color: white;"
+              style: "position: relative; background-color: white; color: black;"
             });
             var placeTitle = $('<h4>').attr({
               class: "col-1"
