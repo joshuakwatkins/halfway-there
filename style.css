@@ -155,3 +155,9 @@ span:before {
 #findthemiddle {
     margin: 25px;
 }
+
+.cinema1, .cinema2, .cinema3 {
+    background-color: cornsilk;
+    font-size: 15px;
+    color: black
+}
