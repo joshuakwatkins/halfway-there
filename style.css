@@ -176,4 +176,13 @@ span:before {
 /* #findthemiddle {
     margin: 25px;
 }
+<<<<<<< HEAD
 */
+=======
+
+.cinema1, .cinema2, .cinema3 {
+    background-color: cornsilk;
+    font-size: 15px;
+    color: black
+}
+>>>>>>> 82f1a2f511765a922968110f976ec9f8675873e6
