@@ -164,14 +164,16 @@ function calcRoute() {
     console.log(markerSet);
   
 
+
+  var moviesAndTimes = ['.cinema1','.cinema2','.cinema3'];
+  var joshNeeds = []; //array containing 3 subarrays of lat,long
+  
+function doomsday() {
+  event.preventDefault();
   var c = moment().format();
   var geoArray = [-22, 14];  //use geoArray.push() to add to lat and long to this
   var movieCoord = geoArray.toString().replace(',',';');
   var cinArray = [];
-  var moviesAndTimes = ['.cinema1','.cinema2','.cinema3'];
-  var joshNeeds = []; //array containing 3 subarrays of lat,long
-  
-
 console.log(movieCoord);
  var settings = {
     "url": "https://api-gate2.movieglu.com/cinemasNearby/?n=3",
@@ -192,7 +194,7 @@ console.log(movieCoord);
     console.log(response);
     for (i=0; i < 3; i++) {
       var cinTarget = $(moviesAndTimes[i]);  // placeholder; MUST CHANGE TO SEE INFO ON PAGE!
-
+      
     var cinAID = response.cinemas[i].cinema_id;
 
     var cinemaName = document.createElement("h3");
@@ -242,7 +244,8 @@ console.log(movieCoord);
 
         $.ajax(settings).done(function (response) {
           var cinTarget = $(moviesAndTimes[i]);
-         
+         var listy = document.createElement('ol');
+         cinTarget.append(listy);
           for (let j = 0; j < 4; j++) {
               var sTime = [];
      
@@ -257,14 +260,14 @@ console.log(movieCoord);
             }
             var cinTime = document.createElement("li");
             cinTime.textContent = response.films[j].film_name + " -\n Start Times: " + sTime;
-            cinTarget.append(cinTime);
+            listy.append(cinTime);
             
           }
 
         });
       }
      
-      }
+      } }
 
 
 
