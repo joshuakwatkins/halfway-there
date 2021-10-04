@@ -108,6 +108,7 @@ span:before {
   svg {
     display: none;
   }
+  
 
   .formLocatInput{
 	position:relative;
@@ -119,7 +120,7 @@ span:before {
 
 .formLocatInput label{
 	position:absolute;
-	top:-20px;
+	top:0px;
 	left:0px;
 	font-size:16px;
 	color:white;	
@@ -146,18 +147,42 @@ span:before {
 	
 }
 
-.radioList {
+
+::-webkit-scrollbar-track
+{
+	border: 3px black;
+	/* // border color does not support transparent on scrollbar */
+	 border-color: transparent;
+	background-color: darkgrey;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: black;
+	border-radius: 7px;
+    
+}
     padding: 10px 40px;
     margin: 0 auto;
 
 }
 
-#findthemiddle {
+/* #findthemiddle {
     margin: 25px;
 }
+<<<<<<< HEAD
+*/
+=======
 
 .cinema1, .cinema2, .cinema3 {
     background-color: cornsilk;
     font-size: 15px;
     color: black
 }
+>>>>>>> 82f1a2f511765a922968110f976ec9f8675873e6
