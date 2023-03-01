@@ -1,0 +1,23 @@
+{
+  "name": "halfway-there",
+  "version": "1.0.0",
+  "description": "This application was created to make it easier to hang out with friends! After inputting two locations and an activity, you will be given infomation on activities(based on your input) within the midpoint of the two given locations.",
+  "main": "script.js",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuakwatkins/halfway-there.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshuakwatkins/halfway-there/issues"
+  },
+  "homepage": "https://github.com/joshuakwatkins/halfway-there#readme"
+}
