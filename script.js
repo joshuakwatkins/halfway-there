@@ -28,11 +28,13 @@ function isitworking() {
 }
 
 function clearMarkers() {
-  for (var i=0; i<markerSet.length; i++) {
-    markerSet[i].setMap(null);
+  if (markerSet.length !== 0) {
+    for (var i=0; i<markerSet.length; i++) {
+      markerSet[i].setMap(null);
+    }
+    markerSet = [];
+    resultContent.html("");
   }
-  markerSet = [];
-  resultContent.html("");
 }
 
 function initMap() {
