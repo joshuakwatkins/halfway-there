@@ -1,4 +1,4 @@
-var apiKey = GOOGLE_MAPS_API_KEY;
+var apiKey = 'AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I';
 var hostUrl = 'https://majestic-chimera-34ed15.netlify.app/';
 
 var marker;
