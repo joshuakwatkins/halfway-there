@@ -1,3 +1,5 @@
+const NODE_ENV = process.env.NODE_ENV
+
 var apiKey = process.env.GOOGLE_MAPS_API_KEY;
 var hostUrl = 'https://majestic-chimera-34ed15.netlify.app/';
 
