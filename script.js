@@ -83,14 +83,14 @@ function calcRoute() {
         markerSet.push(marker)
         marker.setMap(map)
         //calcMidPoint(midLat, midLng)
-        var radius = 500;
+        var radius = 5000;
         var userType = $('input[name="userType"]:checked').val();
         var userKeyword = $('#userKeyword').val();
         console.log(userType);
         var config = {
           method: 'get',
           url: hostUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + midPoint.lat() + '%2C' + midPoint.lng() + '&opennow=true&radius=' + radius + '&keyword=' + userKeyword + '&key=' + apiKey,
-          header: { }
+          header: {  }
         }
         // var config = {
         //   method: 'get',
@@ -110,7 +110,6 @@ function calcRoute() {
           console.log(data.results[0].geometry.location.lng);
           console.log(data.results[0].geometry.location.lat);
           for (var i=0;i<data.results.length; i++) {
-            debugger;
             var latlng = data.results[i].geometry.location;
             marker = new google.maps.Marker({
               position: latlng,
