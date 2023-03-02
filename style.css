@@ -112,7 +112,7 @@ span:before {
   .formLocatInput{
 	position:relative;
 	margin-bottom:25px;
-    max-width: 80%; 
+    width: 80%; 
     margin: 50px auto;
     /*background-color:black;*/
 }
