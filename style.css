@@ -114,6 +114,7 @@ span:before {
 	margin-bottom:25px;
     width: 80%; 
     margin: 50px auto;
+    text-align: center;
     /*background-color:black;*/
 }
 
@@ -170,7 +171,7 @@ span:before {
 
 
 #findthemiddle {
-    margin: 25px auto;
+    margin: 60px auto;
 }
 
 /* .cinema1, .cinema2, .cinema3 {
