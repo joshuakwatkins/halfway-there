@@ -48,7 +48,6 @@ body,h1,h2,h3,h4,h5 {
 #submitContent{
     height: 700px;
     flex-grow: 1;
-    box-shadow: 0 0 5px 5px yellow;
     color: black;
     background-color: white;;
     
@@ -66,7 +65,6 @@ body,h1,h2,h3,h4,h5 {
     padding:10px;
     margin:10px;
     border-radius: 25px;
-    box-shadow: 0 0 5px 5px yellow;
     color:white;
 }
 
@@ -170,12 +168,147 @@ span:before {
 }
 
 
-/* #findthemiddle {
+#findthemiddle {
     margin: 25px;
 }
 
-.cinema1, .cinema2, .cinema3 {
+/* .cinema1, .cinema2, .cinema3 {
     background-color: cornsilk;
     font-size: 15px;
     color: black
 }
+
+
+/* 
+--------------------- */
+
+/* @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+#root {
+  min-height: 550px;
+  height: 100vh;
+}
+
+* {
+  overflow: auto;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+body {
+  height: 100vh; 
+  background-color: rgb(83, 83, 83);
+}
+
+header {
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Raleway", sans-serif;
+}
+
+#resultContent {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgb(33, 33, 33);
+}
+
+#resultContent h5 {
+  padding: 20px;
+}
+
+#submitContent {
+  height: 100%;
+  flex-grow: 1;
+  background-color: rgb(33, 33, 33);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+#header {
+  background-image: url("../public/Assets/Images/placeimg_640_480_any.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10vh;
+  position: inherit;
+}
+
+#header h1 {
+  margin: auto;
+  text-align: center;
+  line-height: 10vh;
+}
+
+#column-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 20;
+  height: 90vh;
+  min-height: 550px;
+}
+
+#findthemiddle {
+  margin: 0 auto;
+}
+
+.mapdiv{
+    height:500px;
+}
+
+.formLocatInput {
+  position: relative;
+  margin-bottom: 25px;
+  max-width: 80%;
+  margin: 50px auto;
+
+}
+
+.formLocatInput input {
+  border: 0;
+  border-bottom: 1px solid #555;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: white;
+}
+
+@media screen and (max-width: 1150px) {
+  #column-container {
+    grid-template-columns: 2fr 3fr 2fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #column-container {
+    display: block;
+    height: 100%;
+  }
+  #map {
+    height: 700px;
+  }
+} */
