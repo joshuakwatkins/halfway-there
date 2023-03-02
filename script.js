@@ -119,7 +119,7 @@ function calcRoute() {
 
           var placeCard = $("<div>").attr({
             class: "w3-border w3-card right-content",
-            style: "position: relative; background-color: white; color: black; padding: 15px 0;",
+            style: "position: relative; background-color: white; color: black; margin: 15px 0;",
           });
           var placeTitle = $("<h4>")
             .attr({
