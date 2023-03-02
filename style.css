@@ -66,12 +66,13 @@ body,h1,h2,h3,h4,h5 {
     margin:10px;
     border-radius: 25px;
     color:white;
+    opacity: 0.8;
 }
 
 .right-content:hover{
     size:110%;
     /* background-color:blue; */
-    opacity: 0.9;
+    
     box-shadow: 20px;
     /* width: 95%;
     height: 95%; */
@@ -169,7 +170,7 @@ span:before {
 
 
 #findthemiddle {
-    margin: 25px;
+    margin: 25px auto;
 }
 
 /* .cinema1, .cinema2, .cinema3 {
