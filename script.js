@@ -1,5 +1,5 @@
 var apiKey = 'AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I';
-var hostUrl = 'https://cors-anywhere.herokuapp.com/corsdemo';
+var hostUrl = 'https://cors-anywhere.herokuapp.com/';
 
 var marker;
 var map;
