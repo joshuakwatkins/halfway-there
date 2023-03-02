@@ -1,5 +1,5 @@
 var apiKey = 'AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I';
-var hostUrl = 'https://majestic-chimera-34ed15.netlify.app/index.html';
+var hostUrl = 'https://cors-anywhere.herokuapp.com/corsdemo';
 
 var marker;
 var map;
