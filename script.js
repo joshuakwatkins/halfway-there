@@ -1,5 +1,5 @@
 var apiKey = 'AIzaSyCJrWz6gA0wql676OZAS1hVKlF7Cc38o_I';
-var hostUrl = 'https://majestic-chimera-34ed15.netlify.app/';
+var hostUrl = 'https://majestic-chimera-34ed15.netlify.app/index.html';
 
 var marker;
 var map;
@@ -77,13 +77,13 @@ function calcRoute() {
             map: map,
             position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
             title:'Mid Point',
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
             zIndex: 1
         });
         markerSet.push(marker)
         marker.setMap(map)
         //calcMidPoint(midLat, midLng)
-        var radius = 5000;
+        var radius = 500;
         var userType = $('input[name="userType"]:checked').val();
         var userKeyword = $('#userKeyword').val();
         console.log(userType);
